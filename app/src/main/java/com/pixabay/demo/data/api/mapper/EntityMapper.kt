@@ -1,9 +1,10 @@
-package com.pixabay.demo.data.entity
+package com.pixabay.demo.data.api.mapper
 
-import com.pixabay.demo.domain.model.Photo
+import com.pixabay.demo.data.api.response.ImageEntity
+import com.pixabay.demo.domain.model.Image
 
-fun PhotoEntity.toDomain(): Photo {
-    return Photo(
+fun ImageEntity.toDomain(): Image {
+    return Image(
         id = id,
         thumbnailUrl = previewURL,
         imageUrl = largeImageURL,

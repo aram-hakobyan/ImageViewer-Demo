@@ -1,4 +1,4 @@
-package com.pixabay.demo.ui.details
+package com.pixabay.demo.ui.home.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,13 +9,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.pixabay.demo.R
 import com.pixabay.demo.databinding.FragmentDetailsBinding
-import com.pixabay.demo.ui.home.PhotosViewModel
+import com.pixabay.demo.ui.home.HomeViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class DetailsFragment : Fragment() {
+class ImageDetailsFragment : Fragment() {
 
-    private val viewModel: PhotosViewModel by activityViewModels()
+    private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var binding: FragmentDetailsBinding
 
     override fun onCreateView(
@@ -33,6 +33,6 @@ class DetailsFragment : Fragment() {
 
     companion object {
         @JvmStatic
-        fun newInstance() = DetailsFragment()
+        fun newInstance() = ImageDetailsFragment()
     }
 }

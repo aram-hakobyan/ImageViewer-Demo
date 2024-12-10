@@ -1,4 +1,4 @@
-package com.pixabay.demo.ui.home
+package com.pixabay.demo.ui.home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -6,14 +6,14 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.pixabay.demo.databinding.ItemImageBinding
-import com.pixabay.demo.domain.model.Photo
+import com.pixabay.demo.domain.model.Image
 
 class ImageListAdapter(
     private val clickListener: OnItemClickListener
-) : ListAdapter<Photo, ImageListAdapter.ImageViewHolder>(DiffCallback()) {
+) : ListAdapter<Image, ImageListAdapter.ImageViewHolder>(DiffCallback()) {
 
     interface OnItemClickListener {
-        fun onItemClick(image: Photo)
+        fun onItemClick(image: Image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
@@ -28,19 +28,19 @@ class ImageListAdapter(
 
     class ImageViewHolder(private val binding: ItemImageBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(image: Photo, listener: OnItemClickListener) {
+        fun bind(image: Image, listener: OnItemClickListener) {
             binding.image = image
             binding.clickListener = listener
             binding.executePendingBindings()
         }
     }
 
-    class DiffCallback : DiffUtil.ItemCallback<Photo>() {
-        override fun areItemsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+    class DiffCallback : DiffUtil.ItemCallback<Image>() {
+        override fun areItemsTheSame(oldItem: Image, newItem: Image): Boolean {
             return oldItem.id == newItem.id
         }
 
-        override fun areContentsTheSame(oldItem: Photo, newItem: Photo): Boolean {
+        override fun areContentsTheSame(oldItem: Image, newItem: Image): Boolean {
             return oldItem == newItem
         }
     }

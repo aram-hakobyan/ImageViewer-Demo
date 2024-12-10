@@ -6,7 +6,7 @@
 
         <variable
             name="viewModel"
-            type="com.pixabay.demo.ui.home.PhotosViewModel" />
+            type="com.pixabay.demo.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,6 +20,7 @@
             android:layout_width="0dp"
             android:layout_height="200dp"
             android:adjustViewBounds="true"
+            android:importantForAccessibility="no"
             android:scaleType="center"
             app:imageUrl="@{viewModel.image.imageUrl}"
             app:layout_constraintEnd_toEndOf="parent"

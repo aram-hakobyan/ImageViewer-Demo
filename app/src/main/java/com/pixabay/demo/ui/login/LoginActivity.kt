@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.pixabay.demo.R
 import com.pixabay.demo.databinding.ActivityLoginBinding
-import com.pixabay.demo.ui.home.MainActivity
+import com.pixabay.demo.ui.home.HomeActivity
 import com.pixabay.demo.ui.register.RegisterActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
         startActivity(
             Intent(
                 this@LoginActivity,
-                MainActivity::class.java
+                HomeActivity::class.java
             )
         )
         finish()

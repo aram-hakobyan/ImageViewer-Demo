@@ -1,11 +1,12 @@
-package com.pixabay.demo.ui.register
+package com.pixabay.demo.data.repo
 
+import com.pixabay.demo.domain.repo.RegisterRepository
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 
-class RegisterRepository @Inject constructor() {
+class RegisterRepositoryImpl @Inject constructor() : RegisterRepository {
 
-    suspend fun register(
+    override suspend fun register(
         email: String,
         password: String,
         age: Int

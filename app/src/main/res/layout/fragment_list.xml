@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.pixabay.demo.ui.home.PhotosViewModel" />
+            type="com.pixabay.demo.ui.home.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

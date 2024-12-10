@@ -1,4 +1,4 @@
-package com.pixabay.demo.ui.home
+package com.pixabay.demo.ui.home.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,14 +15,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.pixabay.demo.R
 import com.pixabay.demo.databinding.FragmentListBinding
-import com.pixabay.demo.domain.model.Photo
+import com.pixabay.demo.domain.model.Image
+import com.pixabay.demo.ui.home.HomeViewModel
+import com.pixabay.demo.ui.home.adapter.ImageListAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class ListFragment : Fragment(), ImageListAdapter.OnItemClickListener {
+class ImageListFragment : Fragment(), ImageListAdapter.OnItemClickListener {
 
-    private val viewModel: PhotosViewModel by activityViewModels()
+    private val viewModel: HomeViewModel by activityViewModels()
     private lateinit var binding: FragmentListBinding
 
     override fun onCreateView(
@@ -54,7 +56,7 @@ class ListFragment : Fragment(), ImageListAdapter.OnItemClickListener {
         }
     }
 
-    override fun onItemClick(image: Photo) {
+    override fun onItemClick(image: Image) {
         viewModel.image = image
 
         findNavController().navigate(
@@ -75,6 +77,6 @@ class ListFragment : Fragment(), ImageListAdapter.OnItemClickListener {
 
     companion object {
         @JvmStatic
-        fun newInstance() = ListFragment()
+        fun newInstance() = ImageListFragment()
     }
 }

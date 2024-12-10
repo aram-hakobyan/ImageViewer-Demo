@@ -10,7 +10,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import com.pixabay.demo.R
 import com.pixabay.demo.databinding.ActivityRegisterBinding
-import com.pixabay.demo.ui.home.MainActivity
+import com.pixabay.demo.ui.home.HomeActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -53,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
         startActivity(
             Intent(
                 this@RegisterActivity,
-                MainActivity::class.java
+                HomeActivity::class.java
             )
         )
         finish()

@@ -1,4 +1,4 @@
-package com.pixabay.demo.ui.ext
+package com.pixabay.demo.core.ext
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

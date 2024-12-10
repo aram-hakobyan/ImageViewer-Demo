@@ -1,6 +1,6 @@
 package com.pixabay.demo.data.di
 
-import com.pixabay.demo.data.api.PhotosApi
+import com.pixabay.demo.data.api.PixabayApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,7 +24,7 @@ object NetworkModule {
     @Singleton
     fun providePhotosApi(
         retrofit: Retrofit
-    ): PhotosApi {
-        return retrofit.create(PhotosApi::class.java)
+    ): PixabayApi {
+        return retrofit.create(PixabayApi::class.java)
     }
 }

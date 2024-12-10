@@ -13,13 +13,13 @@
         android:layout_height="match_parent"
         android:padding="16dp">
 
-        <!-- Email Input -->
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Email"
+            android:autofillHints="emailAddress"
+            android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:text="@={viewModel.email}"
             app:errorText="@{viewModel.emailError}"
@@ -27,13 +27,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Password Input -->
         <EditText
             android:id="@+id/etPassword"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Password"
+            android:autofillHints="password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:text="@={viewModel.password}"
             app:errorText="@{viewModel.passwordError}"
@@ -41,13 +41,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
-        <!-- Age Input -->
         <EditText
             android:id="@+id/etAge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:hint="Age"
+            android:hint="@string/age"
+            android:importantForAutofill="no"
             android:inputType="number"
             android:text="@={viewModel.age}"
             app:errorText="@{viewModel.ageError}"
@@ -55,25 +55,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etPassword" />
 
-        <!-- Register Button -->
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:enabled="@{viewModel.isRegisterEnabled}"
             android:onClick="@{() -> viewModel.onRegisterClicked()}"
-            android:text="Register"
+            android:text="@string/register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etAge" />
 
-        <!-- Back to Login Button -->
         <Button
             android:id="@+id/btnBackToLogin"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="@{() -> viewModel.onBackToLoginClicked()}"
-            android:text="Back to Login"
+            android:text="@string/back_to_login"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/btnRegister" />

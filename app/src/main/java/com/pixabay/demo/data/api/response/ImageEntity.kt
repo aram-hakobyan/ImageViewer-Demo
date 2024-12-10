@@ -1,6 +1,6 @@
-package com.pixabay.demo.data.entity
+package com.pixabay.demo.data.api.response
 
-data class PhotoEntity(
+data class ImageEntity(
     val id: Int,
     val pageURL: String,
     val type: String,

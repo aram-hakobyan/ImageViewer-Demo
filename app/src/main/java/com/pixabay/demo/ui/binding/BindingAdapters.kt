@@ -1,12 +1,12 @@
-package com.pixabay.demo.ui.login
+package com.pixabay.demo.ui.binding
 
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import coil.load
-import com.pixabay.demo.domain.model.Photo
-import com.pixabay.demo.ui.home.ImageListAdapter
+import com.pixabay.demo.domain.model.Image
+import com.pixabay.demo.ui.home.adapter.ImageListAdapter
 
 @BindingAdapter("errorText")
 fun setErrorText(
@@ -22,7 +22,7 @@ fun setOnItemClickListener(
     clickListener: ImageListAdapter.OnItemClickListener?
 ) {
     view.setOnClickListener {
-        val item = view.tag as? Photo
+        val item = view.tag as? Image
         if (item != null && clickListener != null) {
             clickListener.onItemClick(item)
         }
@@ -36,7 +36,7 @@ fun loadImage(
 ) {
     view.load(url) {
         // placeholder(R.drawable.placeholder)
-        // error(R.drawable.error_image)
+        // error(R.drawable.error)
     }
 }
 

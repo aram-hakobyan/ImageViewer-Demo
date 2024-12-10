@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/listFragment"
-        android:name="com.pixabay.demo.ui.home.ListFragment"
+        android:name="com.pixabay.demo.ui.home.fragment.ImageListFragment"
         android:label="Image List">
 
         <action
@@ -16,7 +16,7 @@
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.pixabay.demo.ui.details.DetailsFragment"
+        android:name="com.pixabay.demo.ui.home.fragment.ImageDetailsFragment"
         android:label="Image Details">
 
         <argument
