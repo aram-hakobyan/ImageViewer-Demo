@@ -4,116 +4,141 @@
 
     <data>
 
+        <import type="android.view.View" />
+
         <variable
             name="viewModel"
-            type="com.pixabay.demo.ui.home.HomeViewModel" />
+            type="com.imageviewer.demo.presentation.home.HomeViewModel" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:fillViewport="true">
 
-        <!-- Section 1: Image and Details -->
-        <ImageView
-            android:id="@+id/ivImage"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:adjustViewBounds="true"
-            android:importantForAccessibility="no"
-            android:scaleType="center"
-            app:imageUrl="@{viewModel.image.imageUrl}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_launcher_background" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+            android:padding="@dimen/default_margin">
 
-        <TextView
-            android:id="@+id/tvImageSize"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@{`Resolution: ` + viewModel.image.size}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/ivImage"
-            tools:text="test" />
+            <!-- Section 1 -->
+            <ImageView
+                android:id="@+id/ivImage"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:importantForAccessibility="no"
+                android:scaleType="fitXY"
+                app:imageUrl="@{viewModel.selectedImage.imageUrl}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/ic_launcher_background" />
 
-        <TextView
-            android:id="@+id/tvImageType"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@{`Type: ` + viewModel.image.type}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvImageSize"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvImageSize"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/default_margin"
+                android:text="@{`Resolution: ` + viewModel.selectedImage.size}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivImage"
+                tools:text="Resolution" />
 
-        <TextView
-            android:id="@+id/tvImageTags"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@{`Tags: ` + viewModel.image.tags}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvImageType"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvImageType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{`Type: ` + viewModel.selectedImage.type}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvImageSize"
+                tools:text="Type" />
 
-        <!-- Section 2: User and Statistics -->
-        <TextView
-            android:id="@+id/tvUserName"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@{`Author: ` + viewModel.image.user}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvImageTags"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvImageTags"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{`Tags: ` + viewModel.selectedImage.tags}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvImageType"
+                tools:text="Tags" />
 
-        <TextView
-            android:id="@+id/tvViews"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{`Views: ` + viewModel.image.views}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvUserName"
-            tools:text="test" />
+            <!-- Section 2 -->
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/section2Group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="@{viewModel.isDetailsVisible ? View.VISIBLE : View.GONE}"
+                app:constraint_referenced_ids="tvUserName,tvViews,tvLikes,tvComments,tvFavorites,tvDownloads" />
 
-        <TextView
-            android:id="@+id/tvLikes"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{`Likes: ` + viewModel.image.likes}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvViews"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{`Author: ` + viewModel.selectedImage.user}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvImageTags"
+                tools:text="Author" />
 
-        <TextView
-            android:id="@+id/tvComments"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{`Comments: ` + viewModel.image.comments}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvLikes"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvViews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Views: ` + viewModel.selectedImage.views}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName"
+                tools:text="Views" />
 
-        <TextView
-            android:id="@+id/tvFavorites"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{`Favorites: ` + viewModel.image.favorites}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvComments"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvLikes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Likes: ` + viewModel.selectedImage.likes}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvViews"
+                tools:text="Likes" />
 
-        <TextView
-            android:id="@+id/tvDownloads"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{`Downloads: ` + viewModel.image.downloads}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvFavorites"
-            tools:text="test" />
+            <TextView
+                android:id="@+id/tvComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Comments: ` + viewModel.selectedImage.comments}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvLikes"
+                tools:text="Comments" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/tvFavorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Favorites: ` + viewModel.selectedImage.favorites}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvComments"
+                tools:text="Favorites" />
+
+            <TextView
+                android:id="@+id/tvDownloads"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{`Downloads: ` + viewModel.selectedImage.downloads}"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvFavorites"
+                tools:text="Downloads" />
+
+            <TextView
+                android:id="@+id/btnToggleSection"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewModel.toggleDetailsVisibility()}"
+                android:paddingVertical="@dimen/default_padding"
+                android:text='@{viewModel.isDetailsVisible ? "Hide Details" : "Show Details"}'
+                android:textSize="@dimen/text_small"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDownloads"
+                tools:text="Hide Details" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
 </layout>

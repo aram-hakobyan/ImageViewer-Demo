@@ -3,8 +3,16 @@
 
     <string name="login">Login</string>
     <string name="register">Register</string>
+    <string name="back_to_login">Back to Login</string>
+    <string name="logout">Logout</string>
+
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="age">Age</string>
-    <string name="back_to_login">Back to Login</string>
+
+    <!-- Error messages -->
+    <string name="invalid_email">Invalid email</string>
+    <string name="password_must_be_in_range">Password must be %1$d–%2$d characters</string>
+    <string name="age_must_be_in_range">Age must be between %1$d and %2$d</string>
+    <string name="something_went_wrong">Something went wrong. Please try again later.</string>
 </resources>

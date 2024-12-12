@@ -5,66 +5,100 @@
 
         <variable
             name="viewModel"
-            type="com.pixabay.demo.ui.register.RegisterViewModel" />
+            type="com.imageviewer.demo.presentation.register.RegisterViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp">
+        android:padding="@dimen/default_margin">
 
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginTop="@dimen/content_top_margin"
+            android:layout_marginBottom="@dimen/default_padding"
             android:autofillHints="emailAddress"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:text="@={viewModel.email}"
-            app:errorText="@{viewModel.emailError}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:autofillHints="password"
-            android:hint="@string/password"
-            android:inputType="textPassword"
-            android:text="@={viewModel.password}"
-            app:errorText="@{viewModel.passwordError}"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:errorText="@{viewModel.emailError}"
+            app:errorTextVisibility="@{viewModel.emailError != null}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/etEmail" />
 
         <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/default_padding"
+            android:autofillHints="password"
+            android:hint="@string/password"
+            android:inputType="textPassword"
+            android:text="@={viewModel.password}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEmailError" />
+
+        <TextView
+            android:id="@+id/tvPasswordError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:errorText="@{viewModel.passwordError}"
+            app:errorTextVisibility="@{viewModel.passwordError != null}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etPassword" />
+
+        <EditText
             android:id="@+id/etAge"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="@dimen/default_padding"
             android:hint="@string/age"
             android:importantForAutofill="no"
             android:inputType="number"
             android:text="@={viewModel.age}"
-            app:errorText="@{viewModel.ageError}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etPassword" />
+            app:layout_constraintTop_toBottomOf="@id/tvPasswordError" />
+
+        <TextView
+            android:id="@+id/tvAgeError"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark"
+            android:visibility="gone"
+            app:errorText="@{viewModel.ageError}"
+            app:errorTextVisibility="@{viewModel.ageError != null}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etAge" />
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:enabled="@{viewModel.isRegisterEnabled}"
+            android:layout_marginTop="@dimen/default_margin"
             android:onClick="@{() -> viewModel.onRegisterClicked()}"
             android:text="@string/register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/etAge" />
+            app:layout_constraintTop_toBottomOf="@id/tvAgeError" />
 
         <Button
             android:id="@+id/btnBackToLogin"
