@@ -1,8 +1,8 @@
 package com.imageviewer.demo.presentation.home
 
 import androidx.lifecycle.ViewModel
-import com.imageviewer.demo.core.ext.launch
-import com.imageviewer.demo.core.ext.logError
+import com.imageviewer.demo.framework.ext.launch
+import com.imageviewer.demo.framework.ext.logError
 import com.imageviewer.demo.domain.model.Image
 import com.imageviewer.demo.domain.model.Result
 import com.imageviewer.demo.domain.repository.UserRepository

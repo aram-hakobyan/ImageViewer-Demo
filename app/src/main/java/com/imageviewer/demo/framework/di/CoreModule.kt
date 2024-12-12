@@ -1,7 +1,7 @@
-package com.imageviewer.demo.core.di
+package com.imageviewer.demo.framework.di
 
 import android.content.Context
-import com.imageviewer.demo.core.util.Validator
+import com.imageviewer.demo.framework.util.Validator
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

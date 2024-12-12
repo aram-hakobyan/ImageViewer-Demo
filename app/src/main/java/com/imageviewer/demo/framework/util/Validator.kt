@@ -1,4 +1,4 @@
-package com.imageviewer.demo.core.util
+package com.imageviewer.demo.framework.util
 
 import android.content.Context
 import android.util.Patterns

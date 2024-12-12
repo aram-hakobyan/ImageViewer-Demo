@@ -1,9 +1,9 @@
 package com.imageviewer.demo.presentation.login
 
 import androidx.lifecycle.ViewModel
-import com.imageviewer.demo.core.ext.launch
-import com.imageviewer.demo.core.ext.logError
-import com.imageviewer.demo.core.util.Validator
+import com.imageviewer.demo.framework.ext.launch
+import com.imageviewer.demo.framework.ext.logError
+import com.imageviewer.demo.framework.util.Validator
 import com.imageviewer.demo.domain.model.Result
 import com.imageviewer.demo.domain.repository.UserRepository
 import com.imageviewer.demo.domain.usecase.LoginUseCase

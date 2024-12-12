@@ -1,4 +1,4 @@
-package com.imageviewer.demo.core.ext
+package com.imageviewer.demo.framework.ext
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
