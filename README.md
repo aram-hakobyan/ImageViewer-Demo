@@ -66,4 +66,4 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 
 For questions or feedback, feel free to reach out:
 - **Email:** aramhakobyan88@gmail.com
-- **GitHub:** [aram-hakobyan](https://github.com/your-username)
+- **GitHub:** [aram-hakobyan](https://github.com/aram-hakobyan)
