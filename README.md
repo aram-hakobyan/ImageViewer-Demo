@@ -1,23 +1,21 @@
-# Android Login Page with DataStore
+# Android ImageViewer Application
 
-This project demonstrates how to create a login page in an Android application. It leverages modern development tools such as Kotlin Coroutines, ViewModel, and StateFlow for reactive state management, alongside Jetpack DataStore for securely storing user preferences.
+This project enables users to log in or register, access a list of images, and view detailed information for each image. It leverages modern development tools such as Kotlin Coroutines, ViewModel, and StateFlow for reactive state management, alongside Jetpack DataStore for securely storing user preferences.
 
 ---
 
 ## Features
 
 - **UI Design:**
-  - Login page with centered form using ConstraintLayout.
-  - Real-time inline error validation in `EditText` fields.
-  - Dynamic hiding and showing of errors as the user inputs data.
+  - All pages use DataBinding.
+  - Real-time inline error validation.
 
 - **State Management:**
-  - Leveraging `ViewModel` and `StateFlow` for reactive state updates.
-  - Lifecycle-aware data collection in activities.
+  - Leveraging ViewModels and Flows for reactive state updates.
+  - Lifecycle-aware data collection in activities and fragments.
 
 - **Data Persistence:**
   - Using Jetpack `DataStore` to securely store login state and user preferences.
-  - Ability to clear stored values when needed.
 
 ---
 
@@ -30,6 +28,8 @@ This project demonstrates how to create a login page in an Android application. 
    - ViewModel
    - Coroutines
    - Flows
+   - Hilt
+   - Retrofit
    - Jetpack DataStore
    - Coil
 
