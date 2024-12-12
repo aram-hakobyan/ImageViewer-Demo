@@ -8,14 +8,14 @@ This project enables users to log in or register, access a list of images, and v
 
 - **UI Design:**
   - All pages use DataBinding.
-  - Real-time inline error validation.
+  - Real-time error validation.
 
 - **State Management:**
   - Leveraging ViewModels and Flows for reactive state updates.
   - Lifecycle-aware data collection in activities and fragments.
 
 - **Data Persistence:**
-  - Using Jetpack `DataStore` to securely store login state and user preferences.
+  - Using Jetpack DataStore to securely store login state and user preferences.
 
 ---
 
