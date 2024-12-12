@@ -59,10 +59,12 @@ This project enables users to log in or register, access a list of images, and v
 ## Screenshots
 
 ### Login Page
-![Login Page](screenshots/login_page.png)
+![Login Page](screenshots/01.png)
+![Login Page](screenshots/02.png)
 
 ### Home Page
-![Home Page](screenshots/home_page.png)
+![Home Page](screenshots/03.png)
+![Home Page](screenshots/04.png)
 
 ---
 
