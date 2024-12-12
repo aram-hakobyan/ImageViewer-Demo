@@ -8,14 +8,14 @@ This project enables users to log in or register, access a list of images, and v
 
 - **UI Design:**
   - All pages use DataBinding.
-  - Real-time inline error validation.
+  - Real-time error validation.
 
 - **State Management:**
   - Leveraging ViewModels and Flows for reactive state updates.
   - Lifecycle-aware data collection in activities and fragments.
 
 - **Data Persistence:**
-  - Using Jetpack `DataStore` to securely store login state and user preferences.
+  - Using Jetpack DataStore to securely store login state and user preferences.
 
 ---
 
@@ -56,16 +56,6 @@ This project enables users to log in or register, access a list of images, and v
 
 ---
 
-## Screenshots
-
-### Login Page
-![Login Page](screenshots/login_page.png)
-
-### Home Page
-![Home Page](screenshots/home_page.png)
-
----
-
 ## License
 
 This project is licensed under the [Apache License 2.0](LICENSE).
@@ -76,4 +66,4 @@ This project is licensed under the [Apache License 2.0](LICENSE).
 
 For questions or feedback, feel free to reach out:
 - **Email:** aramhakobyan88@gmail.com
-- **GitHub:** [aram-hakobyan](https://github.com/your-username)
+- **GitHub:** [aram-hakobyan](https://github.com/aram-hakobyan)
